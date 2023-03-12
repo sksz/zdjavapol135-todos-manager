@@ -13,5 +13,4 @@ export class TodoListComponent {
     new Todo('Drugie zadanie', false),
     new Todo('Trzecie zadanie', true),
   ];
-
 }

@@ -1,1 +1,18 @@
-<p>todo-item works!</p>
+<div>
+    <span>
+        <mat-checkbox [(ngModel)]="todo.completed">
+        </mat-checkbox>
+    </span>
+
+    <span>
+        {{todo.title}}
+    </span>
+
+    <span class="spacer"></span>
+
+    <span>
+        <button color="warn" mat-mini-fab>
+            <mat-icon>delete</mat-icon>
+        </button>
+    </span>
+</div>
