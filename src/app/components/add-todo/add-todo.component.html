@@ -1,1 +1,40 @@
-<p>add-todo works!</p>
+<mat-card>
+    <mat-card-content>
+        <form>
+            <div class="container">
+                <span>
+                    <mat-form-field>
+                        <mat-label>Todo title</mat-label>
+                        <input
+                            matInput
+                            type="text"
+                            name="title"
+                            placeholder="Wynieś śmieci!"
+                            [(ngModel)]="title"
+                        >
+                        <button
+                            *ngIf="title"
+                            matSuffix
+                            mat-icon-button
+                            aria-label="Clear"
+                            (click)="title=''"
+                        >
+                            <mat-icon>close</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </span>
+
+                <span class="spacer"></span>
+
+                <span>
+                    <button
+                        mat-raised-button
+                        (click)="addTodo()"
+                    >
+                        Dodaj
+                    </button>
+                </span>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

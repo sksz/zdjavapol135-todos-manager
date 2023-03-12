@@ -1,8 +1,10 @@
-<mat-list>
-    <mat-list-item *ngFor="let todoItem of todoCollection">
-        <app-todo-item
-            [todo]="todoItem"
-        >
-        </app-todo-item>
-    </mat-list-item>
-</mat-list>
+<div>
+    <mat-list>
+        <mat-list-item *ngFor="let todoItem of todoCollection">
+            <app-todo-item
+                [todo]="todoItem"
+            >
+            </app-todo-item>
+        </mat-list-item>
+    </mat-list>
+</div>
