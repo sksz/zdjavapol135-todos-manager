@@ -1,6 +1,9 @@
-<div class="container">
+<div [ngClass]="setClass()">
     <span>
-        <mat-checkbox [(ngModel)]="todo.completed">
+        <mat-checkbox
+            [(ngModel)]="todo.completed"
+            (change)="onChange()"
+        >
         </mat-checkbox>
     </span>
 

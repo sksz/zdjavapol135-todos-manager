@@ -3,6 +3,7 @@
         <mat-list-item *ngFor="let todoItem of todoCollection">
             <app-todo-item
                 [todo]="todoItem"
+                (change)="onChange($event)"
             >
             </app-todo-item>
         </mat-list-item>
