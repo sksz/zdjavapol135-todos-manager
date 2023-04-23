@@ -16,13 +16,7 @@ export class TodoItemComponent {
 
   public setClass(): string
   {
-    let className: string = 'container';
-
-    if (this.todo.completed) {
-      className += ' completed';
-    }
-
-    return className;
+    return this.todo.completed ? 'completed' : '';
   }
 
   public onChange(): void

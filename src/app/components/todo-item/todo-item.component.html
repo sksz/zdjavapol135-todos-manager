@@ -1,4 +1,4 @@
-<div [ngClass]="setClass()">
+<div class="container">
     <span>
         <mat-checkbox
             [(ngModel)]="todo.completed"
@@ -7,7 +7,7 @@
         </mat-checkbox>
     </span>
 
-    <span>
+    <span [ngClass]="setClass()">
         {{todo.title}}
     </span>
 
