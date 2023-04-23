@@ -14,7 +14,11 @@
     <span class="spacer"></span>
 
     <span>
-        <button color="warn" mat-mini-fab>
+        <button
+            color="warn"
+            mat-mini-fab
+            (click)="onDelete()"
+        >
             <mat-icon>delete</mat-icon>
         </button>
     </span>

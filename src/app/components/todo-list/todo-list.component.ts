@@ -36,8 +36,12 @@ export class TodoListComponent implements OnInit, OnChanges {
     }
   }
 
-  public onChange(event: Todo) {
-    console.log(event);
+  public onChange(todo: Todo) {
+    console.log(todo);
+  }
+
+  public onDelete(todo: Todo) {
+    console.log(todo);
   }
 
   private refresh(): void {

@@ -4,6 +4,7 @@
             <app-todo-item
                 [todo]="todoItem"
                 (change)="onChange($event)"
+                (delete)="onDelete($event)"
             >
             </app-todo-item>
         </mat-list-item>
