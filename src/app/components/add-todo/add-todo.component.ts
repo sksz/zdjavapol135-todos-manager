@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Todo } from 'src/app/models/Todo';
-import { TodoService } from 'src/app/services/todo.service';
 
 @Component({
   selector: 'app-add-todo',
@@ -10,9 +9,8 @@ import { TodoService } from 'src/app/services/todo.service';
 export class AddTodoComponent {
   public title: string = '';
 
-  public constructor(
-    private todoService: TodoService
-  ) { }
+  @Output()
+  public add: EventEmitter<Todo> = new EventEmitter();
 
   public addTodo(): void
   {
@@ -20,6 +18,6 @@ export class AddTodoComponent {
 
     todo = new Todo(this.title, false);
 
-    this.todoService.addTodoItem(todo);
+    this.add.emit(todo);
   }
 }
