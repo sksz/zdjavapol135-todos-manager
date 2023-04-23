@@ -37,11 +37,19 @@ export class TodoListComponent implements OnInit, OnChanges {
   }
 
   public onChange(todo: Todo) {
-    console.log(todo);
+    this.todoService.updateTodoItem(todo).subscribe(
+      (todo: Todo) => {
+        this.refresh();
+      }
+    );
   }
 
   public onDelete(todo: Todo) {
-    console.log(todo);
+    this.todoService.deleteTodoItem(todo).subscribe(
+      (todo: Todo) => {
+        this.refresh();
+      }
+    );
   }
 
   private refresh(): void {
