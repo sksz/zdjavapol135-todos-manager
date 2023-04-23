@@ -19,9 +19,7 @@ export class TodoListComponent implements OnInit, OnChanges {
 
   public ngOnInit(): void
   {
-    this.todoService.getTodoCollection().subscribe((todos: Todo[]) => {
-      this.todoCollection = todos;
-    });
+    this.refresh();
   }
 
   ngOnChanges(changes: SimpleChanges): void
@@ -30,12 +28,21 @@ export class TodoListComponent implements OnInit, OnChanges {
       changes['newTodo'] &&
       changes['newTodo']?.previousValue != changes['newTodo']?.currentValue
     ) {
-      this.todoService.addTodoItem(changes['newTodo']?.currentValue);
-      this.todoCollection.push(changes['newTodo']?.currentValue);
+      this.todoService.addTodoItem(changes['newTodo']?.currentValue).subscribe(
+        (todo: Todo) => {
+          this.refresh();
+        }
+      );
     }
   }
 
   public onChange(event: Todo) {
     console.log(event);
+  }
+
+  private refresh(): void {
+    this.todoService.getTodoCollection().subscribe((todos: Todo[]) => {
+      this.todoCollection = todos;
+    });
   }
 }
